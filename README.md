@@ -68,20 +68,20 @@ In this project, you take a fairly complex application used to search a movie da
 
 > _Alright! Now that the movie reducer is complete, you have the chance to build a reducer from scratch to handle favorite movie functionality. We will also work on combining reducers._
 
-- [ ] Create a reducer file for handling business logic for favorites. Include the following state values in your initialState setup:
+- [x] Create a reducer file for handling business logic for favorites. Include the following state values in your initialState setup:
 
   - favorites: an array of movie objects
   - displayFavorites: a boolean that holds if favorite elements should be displayed in app
 
-- [ ] **Import your new reducer file into the ./reducers/index.js file.** As a start, only add a default case to the switch statement.
+- [x] **Import your new reducer file into the ./reducers/index.js file.** As a start, only add a default case to the switch statement.
 
-- [ ] **In reducers/index.js, use the combineReducers method to connect both movies and favorite movies to redux.**
+- [x] **In reducers/index.js, use the combineReducers method to connect both movies and favorite movies to redux.**
 
-- [ ] **Notice that your movie functions no longer work. Why?** Make changes necessary to get the component connected to the movie reducer working again.
+- [x] **Notice that your movie functions no longer work. Why?** Make changes necessary to get the component connected to the movie reducer working again.
 
-- [ ] Connect the favorites state to the FavoriteMovieList component and test.
+- [x] Connect the favorites state to the FavoriteMovieList component and test.
 
-- [ ] Connect the displayFavorites state to the Movie and MovieHeader component.
+- [x] Connect the displayFavorites state to the Movie and MovieHeader component.
 
 #### Build out the favorites actions
 
