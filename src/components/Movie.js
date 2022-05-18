@@ -2,12 +2,14 @@ import React from "react";
 import { useParams, useHistory } from "react-router-dom";
 import { connect } from "react-redux";
 import { deleteMovie, addMovie } from "./../actions/movieActions";
+import { addFavorite } from "./../actions/favoritesActions";
 
 const Movie = (props) => {
   const { id } = useParams();
   const { push } = useHistory();
 
-  const { movies, deleteMovie, addMovie, displayFavorites } = props;
+  const { movies, deleteMovie, addMovie, displayFavorites, addFavorite } =
+    props;
 
   const movie = movies.find((movie) => movie.id === Number(id));
 
@@ -16,46 +18,59 @@ const Movie = (props) => {
     push("/movies/");
   };
 
+  const handleFavoriteClick = () => {
+    addFavorite({
+      title: movie.title,
+      id: movie.id,
+    });
+  };
   return (
     <div className="modal-page col">
       <div className="modal-dialog">
         <div className="modal-content">
           <div className="modal-header">
-            <h4 className="modal-title">{movie.title} Details</h4>
+            <h4 className="modal-title">{props.title} Details</h4>
           </div>
           <div className="modal-body">
             <div className="flexContainer">
               <section className="movie-details">
                 <div>
                   <label>
-                    Title: <strong>{movie.title}</strong>
+                    Title: <strong>{props.title}</strong>
                   </label>
                 </div>
                 <div>
                   <label>
-                    Director: <strong>{movie.director}</strong>
+                    Director: <strong>{props.director}</strong>
                   </label>
                 </div>
                 <div>
                   <label>
-                    Genre: <strong>{movie.genre}</strong>
+                    Genre: <strong>{props.genre}</strong>
                   </label>
                 </div>
                 <div>
                   <label>
-                    Metascore: <strong>{movie.metascore}</strong>
+                    Metascore: <strong>{props.metascore}</strong>
                   </label>
                 </div>
                 <div>
                   <label>Description:</label>
                   <p>
-                    <strong>{movie.description}</strong>
+                    <strong>{props.description}</strong>
                   </p>
                 </div>
               </section>
 
               <section>
-                <span className="m-2 btn btn-dark">Favorite</span>
+                {displayFavorites && (
+                  <span
+                    onClick={handleFavoriteClick}
+                    className="m-2 btn btn-dark"
+                  >
+                    Favorite
+                  </span>
+                )}
                 <span className="delete">
                   <input
                     type="button"
@@ -80,4 +95,4 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps, { deleteMovie })(Movie);
+export default connect(mapStateToProps, { deleteMovie, addFavorite })(Movie);
