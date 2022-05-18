@@ -1,13 +1,13 @@
 import React from "react";
 import { useParams, useHistory } from "react-router-dom";
 import { connect } from "react-redux";
-import { deleteMovie } from "./../actions/movieActions";
+import { deleteMovie, addMovie } from "./../actions/movieActions";
 
 const Movie = (props) => {
   const { id } = useParams();
   const { push } = useHistory();
 
-  const { movies, deleteMovie } = props;
+  const { movies, deleteMovie, addMovie } = props;
   const movie = movies.find((movie) => movie.id === Number(id));
 
   const handleDeleteClick = () => {
