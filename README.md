@@ -45,17 +45,17 @@ In this project, you take a fairly complex application used to search a movie da
 
 - [x] **The Movie component needs to access our list of movies to function.** Map movies to props here as well.
 
-- [] **Finally, MovieHeader uses appTitle to display the title text.** Connect this component to appTitle and test appTitle is correctly displayed in your app.
+- [x] **Finally, MovieHeader uses appTitle to display the title text.** Connect this component to appTitle and test appTitle is correctly displayed in your app.
 
 #### Connecting the Delete and Add Movie actions
 
 > _Looks like you got a good handle on mapping stateToProps! Now let's connect some actions._
 
-- [ ] Note that the deleteMovie reducer case and action creator are already available.
+- [x] Note that the deleteMovie reducer case and action creator are already available.
 
-- [ ] **We can delete movies within the Movie Component.** Connect the deleteMovie action through the connect method.
+- [x] **We can delete movies within the Movie Component.** Connect the deleteMovie action through the connect method.
 
-- [ ] **Find the HTML element that should trigger a deletion in the movie component.** Create and connect the necessary event handlers to call deleteMovie on the current movie's id. After setting the state, redirect the user using the push('/movies') command.
+- [x] **Find the HTML element that should trigger a deletion in the movie component.** Create and connect the necessary event handlers to call deleteMovie on the current movie's id. After setting the state, redirect the user using the push('/movies') command.
 
 - [ ] Add in an ADD_MOVIE case to movieReducer.js.
 - [ ] Make this new case return a version of state with new movie values passed in through the payload.
